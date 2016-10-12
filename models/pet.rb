@@ -24,6 +24,11 @@ class Pet
     @id = result['id']
   end
 
+  def delete()
+    sql = "DELETE FROM pets WHERE id = #{@id}"
+    SqlRunner.run( sql )
+  end
+
   def pet_store()
     sql = "SELECT * FROM pet_stores WHERE id = #{@pet_store_id}"
     pet_store_data = SqlRunner.run(sql).first
