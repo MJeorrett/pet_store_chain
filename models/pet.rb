@@ -23,4 +23,10 @@ class Pet
     @id = result['id']
   end
 
+  def pet_store()
+    sql = "SELECT * FROM pet_stores WHERE id = #{@pet_store_id}"
+    pet_store_data = SqlRunner.run(sql).first
+    return PetStore.new(pet_store_data)
+  end
+
 end
