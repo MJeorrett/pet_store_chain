@@ -6,7 +6,7 @@ class Pet
   attr_accessor :name, :type, :pet_store_id
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
+    @id = options['id'].to_i if options['id'] != nil
     @name = options['name']
     @type = options['type']
     @pet_store_id = options['pet_store_id']
