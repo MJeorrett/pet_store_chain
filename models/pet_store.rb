@@ -2,6 +2,8 @@ require_relative('../db/sql_runner')
 
 class PetStore
 
+  attr_reader :id, :name, :address, :stock_type
+
   def initialize(options)
     @id = options['id']
     @name = options['name']
@@ -15,5 +17,5 @@ class PetStore
     pet_store_data = SqlRunner.run(sql).first
     @id = pet_store_data['id']
   end
-  
+
 end
