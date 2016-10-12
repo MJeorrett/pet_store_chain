@@ -13,12 +13,18 @@ jamies_pets.save()
 # pets
 bugs_bunny = Pet.new( 'name' => "Bugs Bunny", 'type' => "rabbit", 'pet_store_id' => pet_world.id)
 bugs_bunny.save()
+
 donald_duck = Pet.new( 'name' => "Donald Duck", 'type' => "duck", 'pet_store_id' => pet_world.id)
 donald_duck.save()
+
 percy_parrot = Pet.new( 'name' => "Percy", 'type' => "parrot", 'pet_store_id' => jamies_pets.id)
 percy_parrot.save()
+
 terry_fish = Pet.new( 'name' => "Terry", 'type' => "tropical fish", 'pet_store_id' => jamies_pets.id)
 terry_fish.save()
+
+timothy = Pet.new( 'name' => "Timothy", 'type' => "tarantula", 'pet_store_id' => jamies_pets.id)
+timothy.save()
 
 binding.pry
 nil

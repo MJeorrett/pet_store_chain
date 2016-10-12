@@ -18,4 +18,10 @@ class PetStore
     @id = pet_store_data['id']
   end
 
+  def get_pets()
+    sql = "SELECT * FROM pets WHERE pet_store_id = #{@id}"
+    pets_data = SqlRunner.run( sql )
+    return pets_data.map { |pet_data| Pet.new( pet_data )}
+  end
+
 end
