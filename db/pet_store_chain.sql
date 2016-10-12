@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS pet_stores;
 DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS pet_stores;
 
 CREATE TABLE pet_stores (
   id SERIAL4 PRIMARY KEY,
