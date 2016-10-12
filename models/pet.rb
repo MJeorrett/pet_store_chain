@@ -24,6 +24,16 @@ class Pet
     @id = result['id']
   end
 
+  def update()
+    sql =
+    "UPDATE pets SET
+      name = '#{@name}',
+      type = '#{@type}',
+      pet_store_id = #{@pet_store_id}
+    WHERE id = #{@id}"
+    SqlRunner.run( sql )
+  end
+
   def delete()
     sql = "DELETE FROM pets WHERE id = #{@id}"
     SqlRunner.run( sql )
