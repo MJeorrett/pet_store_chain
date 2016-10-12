@@ -6,7 +6,7 @@ class PetStore
   attr_accessor :name, :address, :stock_type
 
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i
     @name = options['name']
     @address = options['address']
     @stock_type = options['stock_type']

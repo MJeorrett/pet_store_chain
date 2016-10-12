@@ -5,7 +5,7 @@ class Pet
   attr_reader :id, :name, :type, :pet_store_id
 
   def initialize(options)
-    @id = options['id'] if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @pet_store_id = options['pet_store_id']
@@ -27,6 +27,18 @@ class Pet
     sql = "SELECT * FROM pet_stores WHERE id = #{@pet_store_id}"
     pet_store_data = SqlRunner.run(sql).first
     return PetStore.new(pet_store_data)
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM pets WHERE id = #{id}"
+    pet_data = SqlRunner.run( sql ).first
+    return Pet.new(pet_data)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM pets"
+    pets_data = SqlRunner.run( sql )
+    return pets_data.map { |pet_data| PetStore.new( pet_data ) }
   end
 
 end
