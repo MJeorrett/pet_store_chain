@@ -26,11 +26,16 @@ class PetStore
         name = '#{@name}',
         address = '#{@address}',
         stock_type = '#{@stock_type}'
-      WHERE id = @id"
+      WHERE id = #{@id}"
       SqlRunner.run( sql )
     else
       save()
     end
+  end
+
+  def delete()
+    sql = "DELETE FROM pet_stores WHERE id = #{@id}"
+    SqlRunner.run(sql)
   end
 
   def get_pets()
